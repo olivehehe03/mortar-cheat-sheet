@@ -3,7 +3,6 @@ import "./App.css";
 import { FireMission } from "./types/FireMission";
 
 const App = () => {
-  const [count, setCount] = useState(0);
   const [fireMissions, setFireMissions] = useState<FireMission[]>([]);
 
   const updateFireMission = (updatedFireMission: FireMission) => {
