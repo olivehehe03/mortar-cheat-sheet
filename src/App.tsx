@@ -1,35 +1,201 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { FireMission } from "./types/FireMission";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [fireMissions, setFireMissions] = useState<FireMission[]>([]);
+
+  const updateFireMission = (updatedFireMission: FireMission) => {
+    const updatedFireMissions = fireMissions.map((fireMission) =>
+      fireMission.id === updatedFireMission.id
+        ? updatedFireMission
+        : fireMission
+    );
+    setFireMissions(updatedFireMissions);
+  };
+
+  console.log(fireMissions);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <h1>Mortar elevation cheat sheet</h1>
+      <div className="fireMissions">
+        {fireMissions.map((fireMission) => {
+          return (
+            <div key={fireMission.id} className="fireMission">
+              <div className="elevationCalculation">
+                <div>
+                  <span>Elevation calculation</span>
+                </div>
+                <div>
+                  <span>Height (you)</span>
+                  <input
+                    value={fireMission.height}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        height: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>Height (target)</span>
+                  <input
+                    value={fireMission.targetHeight}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        targetHeight: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>Range</span>
+                  <input
+                    value={fireMission.range}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        range: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>Elevation (estimate)</span>
+                  <input
+                    value={fireMission.estimatedElevation}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        estimatedElevation: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>D elev / 100m</span>
+                  <input
+                    value={fireMission.dElev}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        dElev: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+              <div className="formula">
+                <p>Remarks</p>
+                <textarea
+                  value={fireMission.remarks}
+                  onChange={(e) =>
+                    updateFireMission({
+                      ...fireMission,
+                      remarks: e.currentTarget.value,
+                    })
+                  }
+                />
+              </div>
+              <div className="info">
+                <div>
+                  <span>Fire mission info</span>
+                </div>
+                <div>
+                  <span>Rounds</span>
+                  <input
+                    value={fireMission.rounds}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        rounds: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>Azimuth</span>
+                  <input
+                    value={fireMission.azimuth}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        azimuth: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>Change</span>
+                  <input
+                    value={fireMission.charge}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        charge: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>Elevation</span>
+                  <input
+                    value={fireMission.elevation}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        elevation: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+                <div>
+                  <span>Flight time</span>
+                  <input
+                    value={fireMission.flightTime}
+                    onChange={(e) =>
+                      updateFireMission({
+                        ...fireMission,
+                        flightTime: e.currentTarget.value,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <button
+        onClick={() =>
+          setFireMissions([
+            ...fireMissions,
+            {
+              id: crypto.randomUUID(),
+              name: "",
+              height: "",
+              targetHeight: "",
+              range: "",
+              estimatedElevation: "",
+              dElev: "",
+              rounds: "",
+              azimuth: "",
+              charge: "",
+              elevation: "",
+              flightTime: "",
+              remarks: "",
+            },
+          ])
+        }
+      >
+        Add fire mission
+      </button>
+    </div>
+  );
+};
 
-export default App
+export default App;
