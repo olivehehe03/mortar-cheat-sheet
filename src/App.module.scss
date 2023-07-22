@@ -8,6 +8,7 @@
   .header {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
 
     .search {
       display: flex;
@@ -23,5 +24,11 @@
 
   .lastSaved {
     margin-top: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .app {
+    min-width: unset;
   }
 }
