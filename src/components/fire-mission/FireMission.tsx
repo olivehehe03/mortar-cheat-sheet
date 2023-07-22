@@ -68,7 +68,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={1}
                   />
                 </div>
                 <div className={styles.field}>
@@ -80,7 +79,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={2}
                   />
                 </div>
                 <div className={styles.field}>
@@ -90,7 +88,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={3}
                   />
                 </div>
                 <div className={styles.field}>
@@ -102,7 +99,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={4}
                   />
                 </div>
                 <div className={styles.field}>
@@ -112,7 +108,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={5}
                   />
                 </div>
               </div>
@@ -136,7 +131,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={6}
                   />
                 </div>
                 <div className={styles.field}>
@@ -146,7 +140,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={7}
                   />
                 </div>
                 <div className={styles.field}>
@@ -156,7 +149,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={8}
                   />
                 </div>
                 <div className={styles.field}>
@@ -166,7 +158,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={9}
                   />
                 </div>
                 <div className={styles.field}>
@@ -176,7 +167,6 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
-                    tabIndex={10}
                   />
                 </div>
               </div>
