@@ -1,27 +1,19 @@
-# React + TypeScript + Vite
+# Mortar elevation cheat sheet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is web based version of the ZSU Mortar Cheat Sheet for recording data and assisting with the calculations required to perform the Rhino Indirect Fire Support role in Arma 3 Missions.
 
-Currently, two official plugins are available:
+For more information about Arma 3 with ZSU, visit https://arma.zsu.gg/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Nerd stuff
 
-## Expanding the ESLint configuration
+App was created with [React](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/) using the [Vite](https://vitejs.dev/) `react-ts` template.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Styling is [Sass](https://sass-lang.com/) and [CSS Modules](https://github.com/css-modules/css-modules)
 
-- Configure the top-level `parserOptions` property like this:
+Formulas are rendered using [KaTeX](https://katex.org/)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Package management is done with [pnpm](https://pnpm.io/)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Forms built with [Formik](https://formik.org/) and [Yup](https://github.com/jquense/yup)
+
+Hosted as a Project Site using [GitHub Pages](https://pages.github.com/)
