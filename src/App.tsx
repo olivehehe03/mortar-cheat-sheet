@@ -101,7 +101,7 @@ const App = () => {
             ...fireMissions,
             {
               id: crypto.randomUUID(),
-              name: "",
+              name: "New Fire Mission",
               height: 0,
               targetHeight: 0,
               range: 0,
