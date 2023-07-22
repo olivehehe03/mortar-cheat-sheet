@@ -1,6 +1,8 @@
 # Mortar elevation cheat sheet
 
-This is web based version of the ZSU Mortar Cheat Sheet for recording data and assisting with the calculations required to perform the Rhino Indirect Fire Support role in Arma 3 Missions.
+This is web based version of the ZSU Mortar Cheat Sheet PDF for recording data and assisting with the calculations required to perform the Rhino Indirect Fire Support role in Arma 3 Missions
+
+This app was created in a couple of hours because I can, so styling is bare minimum to match the original PDF with just enough to be usable on a tablet or phone and cost is not perfect
 
 For more information about Arma 3 with ZSU, visit https://arma.zsu.gg/
 
@@ -17,3 +19,5 @@ Package management is done with [pnpm](https://pnpm.io/)
 Forms built with [Formik](https://formik.org/) and [Yup](https://github.com/jquense/yup)
 
 Hosted as a Project Site using [GitHub Pages](https://pages.github.com/)
+
+Fire Missions are saved in browser [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to allow data to persist across browser sessions and refreshes
