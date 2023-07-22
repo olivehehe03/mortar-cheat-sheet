@@ -1,15 +1,15 @@
 export interface FireMission {
   id: string;
   name: string;
-  height: string;
-  targetHeight: string;
-  range: string;
-  estimatedElevation: string;
-  dElev: string;
-  rounds: string;
-  azimuth: string;
-  charge: string;
-  elevation: string;
-  flightTime: string;
+  height: number;
+  targetHeight: number;
+  range: number;
+  estimatedElevation: number;
+  dElev: number;
+  rounds: number;
+  azimuth: number;
+  charge: number;
+  elevation: number;
+  flightTime: number;
   remarks: string;
 }

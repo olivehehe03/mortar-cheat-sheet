@@ -1,0 +1,84 @@
+.fireMission {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #000;
+
+  .header {
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding: 8px;
+    justify-content: space-between;
+
+    .name {
+      display: flex;
+      gap: 8px;
+      font-size: 18px;
+
+      label {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .field {
+    display: flex;
+    justify-content: space-between;
+
+    .input {
+      max-width: 60px;
+    }
+  }
+
+  .elevation,
+  .info,
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 4px;
+
+    .heading {
+      font-weight: bold;
+      border-bottom: 1px solid #000;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px;
+      height: 100%;
+    }
+  }
+
+  .main {
+    width: 50%;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+
+    .remarks {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 8px;
+      gap: 4px;
+
+      textarea {
+        width: 100%;
+        min-height: 50px;
+      }
+    }
+
+    .formula {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 0;
+      border-top: 1px solid #000;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 800px;
+  height: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .search {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  .fireMissions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .lastSaved {
+    margin-top: auto;
+  }
+}
