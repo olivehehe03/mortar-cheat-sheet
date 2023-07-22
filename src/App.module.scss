@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  min-width: 800px;
+  min-width: calc(800px - 4rem);
   height: 100%;
 
   @media only screen and (max-width: 600px) {
