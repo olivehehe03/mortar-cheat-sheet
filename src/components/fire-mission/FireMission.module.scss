@@ -70,7 +70,7 @@
   .main {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    min-width: 200px;
     gap: 4px;
 
     .heading {
@@ -88,7 +88,6 @@
   }
 
   .main {
-    width: 50%;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
 
