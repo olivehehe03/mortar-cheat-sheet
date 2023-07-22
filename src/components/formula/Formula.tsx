@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import katex from "katex";
 import { FireMission } from "../../types/FireMission";
 
@@ -11,15 +11,20 @@ const Formula = (props: Props) => {
 
   const ref = useRef<HTMLDivElement>(null);
 
+  const isValidFireMission = useMemo(
+    () =>
+      fireMission?.estimatedElevation &&
+      fireMission?.height &&
+      fireMission?.targetHeight &&
+      fireMission?.dElev,
+    [fireMission]
+  );
+
   useEffect(() => {
     if (ref.current) {
-      if (fireMission) {
+      if (fireMission && isValidFireMission) {
         katex.render(
-          `EL=${fireMission.estimatedElevation || 0}+(\\frac{${
-            fireMission.height || 0
-          }-${fireMission.targetHeight || 0}}{100}\\times{${
-            fireMission.dElev || 0
-          }})`,
+          `EL=${fireMission.estimatedElevation}+(\\frac{${fireMission.height}-${fireMission.targetHeight}}{100}\\times{${fireMission.dElev}})`,
           ref.current
         );
       } else {
