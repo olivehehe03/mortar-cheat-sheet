@@ -15,6 +15,8 @@ const FireMission = (props: Props) => {
   const { fireMission, handleUpdateFireMission, handleDeleteFireMission } =
     props;
 
+  const handleFocus = (e: FocusEvent<HTMLInputElement>) => e.target.select();
+
   return (
     <Formik
       initialValues={fireMission}
@@ -28,7 +30,7 @@ const FireMission = (props: Props) => {
           <div className={styles.header}>
             <div className={styles.name}>
               <label>Name</label>
-              <Field name="name" type="text" className={styles.nameInput} />
+              <Field name="name" type="text" />
             </div>
             <button
               onClick={() => {
@@ -54,14 +56,7 @@ const FireMission = (props: Props) => {
                   <label>
                     Height<sub>you</sub>
                   </label>
-                  <Field
-                    name="height"
-                    type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
-                  />
+                  <Field name="height" type="number" onFocus={handleFocus} />
                 </div>
                 <div className={styles.field}>
                   <label>
@@ -70,22 +65,12 @@ const FireMission = (props: Props) => {
                   <Field
                     name="targetHeight"
                     type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
+                    onFocus={handleFocus}
                   />
                 </div>
                 <div className={styles.field}>
                   <label>Range</label>
-                  <Field
-                    name="range"
-                    type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
-                  />
+                  <Field name="range" type="number" onFocus={handleFocus} />
                 </div>
                 <div className={styles.field}>
                   <label>
@@ -94,29 +79,19 @@ const FireMission = (props: Props) => {
                   <Field
                     name="estimatedElevation"
                     type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
+                    onFocus={handleFocus}
                   />
                 </div>
                 <div className={styles.field}>
                   <label>D elev / 100m</label>
-                  <Field
-                    name="dElev"
-                    type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
-                  />
+                  <Field name="dElev" type="number" onFocus={handleFocus} />
                 </div>
               </div>
             </div>
             <div className={styles.main}>
               <div className={styles.remarks}>
                 <label>Remarks</label>
-                <Field name="remarks" as="textarea" className={styles.input} />
+                <Field name="remarks" as="textarea" />
               </div>
               <div className={styles.formula}>
                 <Formula fireMission={values} />
@@ -127,57 +102,26 @@ const FireMission = (props: Props) => {
               <div className={styles.column}>
                 <div className={styles.field}>
                   <label>Rounds</label>
-                  <Field
-                    name="rounds"
-                    type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
-                  />
+                  <Field name="rounds" type="number" onFocus={handleFocus} />
                 </div>
                 <div className={styles.field}>
                   <label>Azimuth</label>
-                  <Field
-                    name="azimuth"
-                    type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
-                  />
+                  <Field name="azimuth" type="number" onFocus={handleFocus} />
                 </div>
                 <div className={styles.field}>
                   <label>Charge</label>
-                  <Field
-                    name="charge"
-                    type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
-                  />
+                  <Field name="charge" type="number" onFocus={handleFocus} />
                 </div>
                 <div className={styles.field}>
                   <label>Elevation</label>
-                  <Field
-                    name="elevation"
-                    type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
-                  />
+                  <Field name="elevation" type="number" onFocus={handleFocus} />
                 </div>
                 <div className={styles.field}>
                   <label>Flight time</label>
                   <Field
                     name="flightTime"
                     type="number"
-                    className={styles.input}
-                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
-                      e.target.select()
-                    }
+                    onFocus={handleFocus}
                   />
                 </div>
               </div>
