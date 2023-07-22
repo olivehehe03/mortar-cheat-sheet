@@ -2,7 +2,7 @@
 
 This is web based version of the ZSU Mortar Cheat Sheet PDF for recording data and assisting with the calculations required to perform the Rhino Indirect Fire Support role in Arma 3 Missions
 
-This app was created in a couple of hours because I can, so styling is bare minimum to match the original PDF with just enough to be usable on a tablet or phone and cost is not perfect
+This app was created in a couple of hours because I can, so styling is bare minimum to match the original PDF with just enough to be usable on a tablet or phone
 
 For more information about Arma 3 with ZSU, visit https://arma.zsu.gg/
 
