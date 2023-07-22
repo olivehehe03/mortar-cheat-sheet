@@ -3,7 +3,7 @@ import { FireMission as FireMissionType } from "../../types/FireMission";
 import { Field, Formik } from "formik";
 import Formula from "../formula/Formula";
 import Autosave from "../autosave/Autosave";
-import { FocusEvent } from "react";
+import { FocusEvent, useState } from "react";
 
 interface Props {
   fireMission: FireMissionType;
@@ -14,6 +14,8 @@ interface Props {
 const FireMission = (props: Props) => {
   const { fireMission, handleUpdateFireMission, handleDeleteFireMission } =
     props;
+
+  const [isLocked, setIsLocked] = useState(false);
 
   const handleFocus = (e: FocusEvent<HTMLInputElement>) => e.target.select();
 
@@ -30,23 +32,28 @@ const FireMission = (props: Props) => {
           <div className={styles.header}>
             <div className={styles.name}>
               <label>Name</label>
-              <Field name="name" type="text" />
+              <Field name="name" type="text" disabled={isLocked} />
             </div>
-            <button
-              onClick={() => {
-                const confirmDelete = window.confirm(
-                  `Are you sure you want to delete ${
-                    fireMission.name || "this fire mission"
-                  }?`
-                );
+            <div className={styles.buttons}>
+              <button onClick={() => setIsLocked(!isLocked)}>
+                {isLocked ? "Unlock" : "Lock"}
+              </button>
+              <button
+                onClick={() => {
+                  const confirmDelete = window.confirm(
+                    `Are you sure you want to delete ${
+                      fireMission.name || "this fire mission"
+                    }?`
+                  );
 
-                if (confirmDelete) {
-                  handleDeleteFireMission(fireMission.id);
-                }
-              }}
-            >
-              Delete
-            </button>
+                  if (confirmDelete) {
+                    handleDeleteFireMission(fireMission.id);
+                  }
+                }}
+              >
+                Delete
+              </button>
+            </div>
           </div>
           <div className={styles.content}>
             <div className={styles.elevation}>
@@ -56,7 +63,12 @@ const FireMission = (props: Props) => {
                   <label>
                     Height<sub>you</sub>
                   </label>
-                  <Field name="height" type="number" onFocus={handleFocus} />
+                  <Field
+                    name="height"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>
@@ -66,11 +78,17 @@ const FireMission = (props: Props) => {
                     name="targetHeight"
                     type="number"
                     onFocus={handleFocus}
+                    disabled={isLocked}
                   />
                 </div>
                 <div className={styles.field}>
                   <label>Range</label>
-                  <Field name="range" type="number" onFocus={handleFocus} />
+                  <Field
+                    name="range"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>
@@ -80,18 +98,24 @@ const FireMission = (props: Props) => {
                     name="estimatedElevation"
                     type="number"
                     onFocus={handleFocus}
+                    disabled={isLocked}
                   />
                 </div>
                 <div className={styles.field}>
                   <label>D elev / 100m</label>
-                  <Field name="dElev" type="number" onFocus={handleFocus} />
+                  <Field
+                    name="dElev"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
                 </div>
               </div>
             </div>
             <div className={styles.main}>
               <div className={styles.remarks}>
                 <label>Remarks</label>
-                <Field name="remarks" as="textarea" />
+                <Field name="remarks" as="textarea" disabled={isLocked} />
               </div>
               <div className={styles.formula}>
                 <Formula fireMission={values} />
@@ -102,19 +126,39 @@ const FireMission = (props: Props) => {
               <div className={styles.column}>
                 <div className={styles.field}>
                   <label>Rounds</label>
-                  <Field name="rounds" type="number" onFocus={handleFocus} />
+                  <Field
+                    name="rounds"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>Azimuth</label>
-                  <Field name="azimuth" type="number" onFocus={handleFocus} />
+                  <Field
+                    name="azimuth"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>Charge</label>
-                  <Field name="charge" type="number" onFocus={handleFocus} />
+                  <Field
+                    name="charge"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>Elevation</label>
-                  <Field name="elevation" type="number" onFocus={handleFocus} />
+                  <Field
+                    name="elevation"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>Flight time</label>
@@ -122,6 +166,7 @@ const FireMission = (props: Props) => {
                     name="flightTime"
                     type="number"
                     onFocus={handleFocus}
+                    disabled={isLocked}
                   />
                 </div>
               </div>
