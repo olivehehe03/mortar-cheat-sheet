@@ -57,6 +57,12 @@
     input {
       max-width: 60px;
     }
+
+    @media only screen and (max-width: 600px) {
+      input {
+        max-width: 100px;
+      }
+    }
   }
 
   .elevation,
