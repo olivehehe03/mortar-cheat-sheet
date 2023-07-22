@@ -11,28 +11,19 @@ const Formula = (props: Props) => {
 
   const ref = useRef<HTMLDivElement>(null);
 
-  const isValidFireMission = useMemo(
+  const formula = useMemo(
     () =>
-      fireMission?.estimatedElevation &&
-      fireMission?.height &&
-      fireMission?.targetHeight &&
-      fireMission?.dElev,
+      `EL=${fireMission?.estimatedElevation || "EL_{est}"}+(\\frac{${
+        fireMission?.height || "Height_{you}"
+      }-${fireMission?.targetHeight || "Height_{target}"}}{100}\\times{${
+        fireMission?.dElev || "\\text{D ELEV per 100m DR}"
+      }})`,
     [fireMission]
   );
 
   useEffect(() => {
     if (ref.current) {
-      if (fireMission && isValidFireMission) {
-        katex.render(
-          `EL=${fireMission.estimatedElevation}+(\\frac{${fireMission.height}-${fireMission.targetHeight}}{100}\\times{${fireMission.dElev}})`,
-          ref.current
-        );
-      } else {
-        katex.render(
-          `EL=EL_{est}+(\\frac{Height_{you}-Height_{target}}{100}\\times{DELEV per 100m DR})`,
-          ref.current
-        );
-      }
+      katex.render(formula, ref.current);
     }
   });
 
