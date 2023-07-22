@@ -26,11 +26,25 @@
     }
   }
 
+  @media only screen and (max-width: 600px) {
+    .header {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+
+      .buttons {
+        justify-content: flex-end;
+      }
+    }
+  }
+
   .content {
     display: flex;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
     .content {
       flex-direction: column;
     }
@@ -94,7 +108,7 @@
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
     .elevation,
     .info,
     .main {

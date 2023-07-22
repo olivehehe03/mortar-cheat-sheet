@@ -115,7 +115,7 @@ const FireMission = (props: Props) => {
             <div className={styles.main}>
               <div className={styles.remarks}>
                 <label>Remarks</label>
-                <Field name="remarks" as="textarea" disabled={isLocked} />
+                <Field name="remarks" as="textarea" />
               </div>
               <div className={styles.formula}>
                 <Formula fireMission={values} />
