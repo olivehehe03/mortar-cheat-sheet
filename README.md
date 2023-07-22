@@ -21,3 +21,5 @@ Forms built with [Formik](https://formik.org/) and [Yup](https://github.com/jque
 Hosted as a Project Site using [GitHub Pages](https://pages.github.com/)
 
 Fire Missions are saved in browser [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to allow data to persist across browser sessions and refreshes
+
+WhY dId YoU uSe `x` InStEaD of `y`?  Because these are the tools I use on a daily basis so they are familiar and much easier to work with than learning something new for a 1 day project
