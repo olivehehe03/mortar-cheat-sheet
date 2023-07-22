@@ -68,6 +68,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -79,6 +80,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -88,6 +90,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -99,6 +102,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -108,6 +112,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
               </div>
@@ -131,6 +136,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -140,6 +146,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -149,6 +156,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -158,6 +166,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
                 <div className={styles.field}>
@@ -167,6 +176,7 @@ const FireMission = (props: Props) => {
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
+                    enterkeyhint="next"
                   />
                 </div>
               </div>
