@@ -3,6 +3,7 @@ import { FireMission as FireMissionType } from "../../types/FireMission";
 import { Field, Formik } from "formik";
 import Formula from "../formula/Formula";
 import Autosave from "../autosave/Autosave";
+import { FocusEvent } from "react";
 
 interface Props {
   fireMission: FireMissionType;
@@ -53,7 +54,14 @@ const FireMission = (props: Props) => {
                   <label>
                     Height<sub>you</sub>
                   </label>
-                  <Field name="height" type="number" className={styles.input} />
+                  <Field
+                    name="height"
+                    type="number"
+                    className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>
@@ -63,11 +71,21 @@ const FireMission = (props: Props) => {
                     name="targetHeight"
                     type="number"
                     className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
                   />
                 </div>
                 <div className={styles.field}>
                   <label>Range</label>
-                  <Field name="range" type="number" className={styles.input} />
+                  <Field
+                    name="range"
+                    type="number"
+                    className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>
@@ -77,11 +95,21 @@ const FireMission = (props: Props) => {
                     name="estimatedElevation"
                     type="number"
                     className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
                   />
                 </div>
                 <div className={styles.field}>
                   <label>D elev / 100m</label>
-                  <Field name="dElev" type="number" className={styles.input} />
+                  <Field
+                    name="dElev"
+                    type="number"
+                    className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
+                  />
                 </div>
               </div>
             </div>
@@ -99,7 +127,14 @@ const FireMission = (props: Props) => {
               <div className={styles.column}>
                 <div className={styles.field}>
                   <label>Rounds</label>
-                  <Field name="rounds" type="number" className={styles.input} />
+                  <Field
+                    name="rounds"
+                    type="number"
+                    className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>Azimuth</label>
@@ -107,11 +142,21 @@ const FireMission = (props: Props) => {
                     name="azimuth"
                     type="number"
                     className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
                   />
                 </div>
                 <div className={styles.field}>
                   <label>Charge</label>
-                  <Field name="charge" type="number" className={styles.input} />
+                  <Field
+                    name="charge"
+                    type="number"
+                    className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
+                  />
                 </div>
                 <div className={styles.field}>
                   <label>Elevation</label>
@@ -119,6 +164,9 @@ const FireMission = (props: Props) => {
                     name="elevation"
                     type="number"
                     className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
                   />
                 </div>
                 <div className={styles.field}>
@@ -127,6 +175,9 @@ const FireMission = (props: Props) => {
                     name="flightTime"
                     type="number"
                     className={styles.input}
+                    onFocus={(e: FocusEvent<HTMLInputElement>) =>
+                      e.target.select()
+                    }
                   />
                 </div>
               </div>
