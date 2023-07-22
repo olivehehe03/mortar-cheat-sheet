@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FireMission.module.scss";
 import { FireMission as FireMissionType } from "../../types/FireMission";
 import { Field, Formik } from "formik";
