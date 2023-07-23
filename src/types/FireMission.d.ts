@@ -16,4 +16,5 @@ export interface FireMission {
   remarks: string;
   ammoType: AmmoType;
   dispersion: number;
+  isLocked: boolean;
 }

@@ -15,7 +15,7 @@ const FireMission = (props: Props) => {
   const { fireMission, handleUpdateFireMission, handleDeleteFireMission } =
     props;
 
-  const [isLocked, setIsLocked] = useState(false);
+  const [isLocked, setIsLocked] = useState(fireMission.isLocked);
 
   const handleFocus = (e: FocusEvent<HTMLInputElement>) => e.target.select();
 
@@ -27,7 +27,7 @@ const FireMission = (props: Props) => {
         setSubmitting(false);
       }}
     >
-      {({ values, handleChange, handleBlur }) => (
+      {({ values, handleChange, handleBlur, setFieldValue }) => (
         <div className={styles.fireMission}>
           <div className={styles.header}>
             <div className={styles.name}>
@@ -40,7 +40,12 @@ const FireMission = (props: Props) => {
               />
             </div>
             <div className={styles.buttons}>
-              <button onClick={() => setIsLocked(!isLocked)}>
+              <button
+                onClick={() => {
+                  setIsLocked(!isLocked);
+                  setFieldValue("isLocked", !isLocked);
+                }}
+              >
                 {isLocked ? "Unlock" : "Lock"}
               </button>
               <button
@@ -145,6 +150,7 @@ const FireMission = (props: Props) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.ammoType}
+                    disabled={isLocked}
                   >
                     <option value="HE">HE</option>
                     <option value="Smoke">Smoke</option>

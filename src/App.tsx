@@ -116,6 +116,7 @@ const App = () => {
               remarks: "",
               ammoType: "HE",
               dispersion: 0,
+              isLocked: false,
             },
           ])
         }
