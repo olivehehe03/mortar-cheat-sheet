@@ -1,5 +1,3 @@
-export type AmmoType = "HE" | "Smoke" | "Flare";
-
 export interface FireMission {
   id: string;
   name: string;
@@ -14,7 +12,5 @@ export interface FireMission {
   elevation: number;
   flightTime: number;
   remarks: string;
-  ammoType: AmmoType;
-  dispersion: number;
   isLocked: boolean;
 }

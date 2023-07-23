@@ -27,7 +27,7 @@ const FireMission = (props: Props) => {
         setSubmitting(false);
       }}
     >
-      {({ values, handleChange, handleBlur, setFieldValue }) => (
+      {({ values, setFieldValue }) => (
         <div className={styles.fireMission}>
           <div className={styles.header}>
             <div className={styles.name}>
@@ -138,29 +138,6 @@ const FireMission = (props: Props) => {
                   <label>Rounds</label>
                   <Field
                     name="rounds"
-                    type="number"
-                    onFocus={handleFocus}
-                    disabled={isLocked}
-                  />
-                </div>
-                <div className={styles.field}>
-                  <label>Ammo Type</label>
-                  <select
-                    name="ammoType"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.ammoType}
-                    disabled={isLocked}
-                  >
-                    <option value="HE">HE</option>
-                    <option value="Smoke">Smoke</option>
-                    <option value="Flare">Flare</option>
-                  </select>
-                </div>
-                <div className={styles.field}>
-                  <label>Dispersion</label>
-                  <Field
-                    name="dispersion"
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}
