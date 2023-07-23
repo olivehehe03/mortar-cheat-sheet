@@ -114,6 +114,8 @@ const App = () => {
               elevation: 0,
               flightTime: 0,
               remarks: "",
+              ammoType: "HE",
+              dispersion: 0,
             },
           ])
         }
