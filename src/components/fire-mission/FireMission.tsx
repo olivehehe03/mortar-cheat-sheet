@@ -27,12 +27,17 @@ const FireMission = (props: Props) => {
         setSubmitting(false);
       }}
     >
-      {({ values }) => (
+      {({ values, handleChange, handleBlur }) => (
         <div className={styles.fireMission}>
           <div className={styles.header}>
             <div className={styles.name}>
               <label>Name</label>
-              <Field name="name" type="text" disabled={isLocked} />
+              <Field
+                name="name"
+                type="text"
+                disabled={isLocked}
+                onFocus={handleFocus}
+              />
             </div>
             <div className={styles.buttons}>
               <button onClick={() => setIsLocked(!isLocked)}>
@@ -92,7 +97,7 @@ const FireMission = (props: Props) => {
                 </div>
                 <div className={styles.field}>
                   <label>
-                    Elevation<sub>est</sub>
+                    EL<sub>est</sub>
                   </label>
                   <Field
                     name="estimatedElevation"
@@ -118,7 +123,7 @@ const FireMission = (props: Props) => {
                 <Field name="remarks" as="textarea" />
               </div>
               <div className={styles.formula}>
-                <Formula fireMission={values} />
+                <Formula fireMission={values} mode="elevation" />
               </div>
             </div>
             <div className={styles.info}>
@@ -128,6 +133,28 @@ const FireMission = (props: Props) => {
                   <label>Rounds</label>
                   <Field
                     name="rounds"
+                    type="number"
+                    onFocus={handleFocus}
+                    disabled={isLocked}
+                  />
+                </div>
+                <div className={styles.field}>
+                  <label>Ammo Type</label>
+                  <select
+                    name="ammoType"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.ammoType}
+                  >
+                    <option value="HE">HE</option>
+                    <option value="Smoke">Smoke</option>
+                    <option value="Flare">Flare</option>
+                  </select>
+                </div>
+                <div className={styles.field}>
+                  <label>Dispersion</label>
+                  <Field
+                    name="dispersion"
                     type="number"
                     onFocus={handleFocus}
                     disabled={isLocked}

@@ -62,7 +62,8 @@ const App = () => {
   return (
     <div className={styles.app}>
       <h1>Mortar elevation cheat sheet</h1>
-      <Formula />
+      <Formula mode="elevationEstimate" />
+      <Formula mode="elevation" />
       <div className={styles.header}>
         <div className={styles.search}>
           <label>Search</label>
